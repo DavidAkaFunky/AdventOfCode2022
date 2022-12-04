@@ -7,11 +7,7 @@ def part2(line):
     return line[0] <= line[2] <= line[1] or line[2] <= line[0] <= line[3]
 
 def solve(lines, test):
-    total = 0
-    for line in lines:
-        if test(line):
-            total += 1
-    return total
+    return sum([test(line) for line in lines])
 
 def main():
     with open("input.txt", "r") as f:
